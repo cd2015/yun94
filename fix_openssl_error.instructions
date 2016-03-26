@@ -1,0 +1,16 @@
+##make sure you have all the vendor dependencies installed by running...
+#`composer install`
+##From the root of the project
+
+##Create a `.env` file from the `.env.example` by doing a file saves...
+
+##Then generate an Auethentication key by running..
+#`php artisan key:generate`
+
+##That generate you a key in the termianl as 
+##`Application key [base64:XXXXXXXXXXXXXXXXXXXXXXXXXXX=] set successfully.` 
+##Which will be stored in your .env file as new line eg
+##`APP_KEY=base64:XXXXXXXXXXXXXXXXXXXXXXXXXXX=`
+
+##The encryption error will go away once you restart the server with..
+#`php artisan serve`
