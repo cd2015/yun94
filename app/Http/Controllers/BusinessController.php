@@ -7,15 +7,15 @@ use App\BusinessDetail;
 
 class BusinessController extends Controller
 {
-    public function index()
+    public function index(BusinessDetail $business)
     {
-        $businesses = BusinessDetail::get();
+        $businesses = $business->get();
         return view('business.index', compact('businesses'));
     }
 
-    public function show($business_reference)
+    public function show(BusinessDetail $business)
     {
-        $business = BusinessDetail::whereBusinessReference($business_reference)->first();
+        //$business = BusinessDetail::whereBusinessReference($business_reference)->first();
         return view('business.show', compact('business'));
     }
 }
