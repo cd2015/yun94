@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'Raleway-Thin-Yg';
+    src: local(Raleway-Thin), local(raleway-thin), local(Raleway Thin),
+    url('../fonts/Raleway-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway-Light-Yg';
+    src: url('../fonts/Raleway-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Raleway-Medium-Yg';
+    src: url('../fonts/Raleway-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Raleway-Regular-Yg';
+    src: url('../fonts/Raleway-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Raleway-Bold-Yg';
+    src: url('../fonts/Raleway-Bold.ttf') format('truetype');
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: table;
+    font-weight: lighter;
+    font-family: 'Raleway-Thin-Yg', 'Lato', sans-serif;
+    color: #fff;
+    -webkit-text-size-adjust: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    background: #560466; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(#8A2BE2 25%, #7c5596 60%, #560466 80%); /* Safari 5.1-6.0 */
+    background: -o-radial-gradient(#8A2BE2 25%, #7c5596 60%, #560466 80%); /* For Opera 11.6-12.0 */
+    background: -moz-radial-gradient(#8A2BE2 25%, #7c5596 60%, #560466 80%); /* For Firefox 3.6-15 */
+    background: radial-gradient(#000 25%, #7c5596 60%, #000 80%); /* Standard syntax */
+    background-size: 800% 600%;
+    background-attachment: fixed;
+    -webkit-animation: GradAnimation 1000s ease infinite;
+    -moz-animation: GradAnimation 1s ease infinite;
+    -o-animation: GradAnimation 1s ease infinite;
+    animation: GradAnimation 5s ease infinite;
+}
+
+@-webkit-keyframes GradAnimation {
+    0% {
+        background-position: 0% 15%;
+        color: #fff;
+    }
+    50% {
+        background-position: 100% 86%;
+        color: rgb(214, 255, 250);
+    }
+    100% {
+        background-position: 0% 15%;
+        color: #fff;
+    }
+}
+
+@-moz-keyframes GradAnimation {
+    0% {
+        background-position: 0% 15%;
+        color: #fff;
+    }
+    50% {
+        background-position: 100% 86%;
+        color: rgb(214, 255, 250);
+    }
+    100% {
+        background-position: 0% 15%;
+        color: #fff;
+    }
+}
+
+@-o-keyframes GradAnimation {
+    0% {
+        background-position: 0% 15%;
+        color: #fff;
+    }
+    50% {
+        background-position: 100% 86%;
+        color: rgb(214, 255, 250);
+    }
+    100% {
+        background-position: 0% 15%;
+        color: #fff;
+    }
+}
+
+@keyframes GradAnimation {
+    0% {
+        background-position: 0% 15%;
+        color: #fff;
+    }
+    50% {
+        background-position: 100% 86%;
+        color: rgb(214, 255, 250);
+    }
+    100% {
+        background-position: 0% 15%;
+        color: #fff;;
+    }
+}
+
+.navigation {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin-top: 48px;
+}
+
+a {
+    color: #fff;
+    font-weight: bold;
+    padding: 16px;
+    text-decoration: none;
+    min-width: 40px;
+    border-radius: 40px;
+}
+
+a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.container {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.content {
+    text-align: center;
+    display: inline-block;
+}
+
+.title {
+    font-size: 96px;
+}

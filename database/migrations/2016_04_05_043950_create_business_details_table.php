@@ -14,7 +14,8 @@ class CreateBusinessDetailsTable extends Migration
     {
         Schema::create('business_details', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('business_name',150);
+            $table->string('business_name',150)->unique();
+            $table->string('business_reference',200)->unique();
             $table->string('category', 40);
             $table->string('tel_no', 15);
             $table->string('mobile_no', 15)->nullable();

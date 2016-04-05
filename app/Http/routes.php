@@ -15,4 +15,4 @@ Route::get('/', 'PagesController@index');
 Route::get('about', 'PagesController@about');
 
 Route::get('business', 'BusinessController@index');
-Route::get('business/{id}', 'BusinessController@show');
+Route::get('business/{business_reference}', 'BusinessController@show');

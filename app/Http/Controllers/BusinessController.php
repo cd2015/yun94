@@ -2,49 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Http\Requests;
-use DB;
+use App\BusinessDetail;
 
 class BusinessController extends Controller
 {
     public function index()
     {
-        //$businesses = $this->getBusinesses();
-
-        $businesses = DB::table('business_details')->get();
-
-        //dd($businesses);
+        $businesses = BusinessDetail::get();
         return view('business.index', compact('businesses'));
     }
 
-    public function show($id)
+    public function show($business_reference)
     {
-        //$business = $this->getBusinesses()[$id];
-        $business = DB::table('business_details')->find($id);
+        $business = BusinessDetail::whereBusinessReference($business_reference)->first();
         return view('business.show', compact('business'));
     }
-
-    /**
-     * @return array
-     */
-    /*public function getBusinesses()
-    {
-        return [
-            'Advertisement & Branding',
-            'Beauty Saloons & Spas',
-            'Boutiques & Tailoring',
-            'Bridal Services & Cars',
-            'Courier',
-            'Furniture & Interior Designs',
-            'Gardens & Recreational Centers',
-            'ICT, Software & Computing',
-            'Phones & Accessories',
-            'Photography & Video',
-            'Restaurants and Hotels',
-            'Tours and Travels'
-        ];
-    }
-    */
 }
