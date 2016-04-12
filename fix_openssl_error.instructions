@@ -4,10 +4,10 @@
 
 ##Create a `.env` file from the `.env.example` by doing a file saves...
 
-##Then generate an Auethentication key by running..
+##Then generate an Authentication key by running..
 #`php artisan key:generate`
 
-##That generate you a key in the termianl as 
+##That generate you a key in the terminal as
 ##`Application key [base64:XXXXXXXXXXXXXXXXXXXXXXXXXXX=] set successfully.` 
 ##Which will be stored in your .env file as new line eg
 ##`APP_KEY=base64:XXXXXXXXXXXXXXXXXXXXXXXXXXX=`
