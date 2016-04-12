@@ -4,18 +4,56 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\BusinessDetail;
+use Doctrine\DBAL\Schema\View;
 
+/**
+ * Controller method the manages Businesses
+ * Class BusinessController
+ * @package App\Http\Controllers
+ */
 class BusinessController extends Controller
 {
-    public function index(BusinessDetail $business)
+
+    /**
+     * @var BusinessDetail
+     */
+    private $business;
+
+    public function __construct(BusinessDetail $selectedBusiness)
     {
-        $businesses = $business->get();
-        return view('business.index', compact('businesses'));
+        $this->business = $selectedBusiness;
     }
 
-    public function show(BusinessDetail $business)
+    /**
+     *Show a list of all Businesses
+     * @return View
+     */
+    public function index()
     {
-        //$business = BusinessDetail::whereBusinessReference($business_reference)->first();
-        return view('business.show', compact('business'));
+        $businesses = $this->business->get();
+        return view('businesses.index', compact('businesses'));
+    }
+
+    /**
+     *Show details of a selected Business
+     * @param $business_reference
+     * @return View
+     */
+    public function show($business_reference)
+    {
+        $business = $this->business->whereBusinessReference($business_reference)->first();
+        return view('businesses.show', compact('business'));
+    }
+
+    /**
+     * Edit details of a selected Business
+     * @param $business_reference
+     * @return View
+     */
+    public function edit($business_reference)
+    {
+        $business = $this->business->whereBusinessReference($business_reference)->first();
+        return view('businesses.edit', compact('business'));
+
     }
 }

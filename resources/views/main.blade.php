@@ -10,7 +10,7 @@
     @section('navigation')
         <a href="/">Home</a>
         <a href="/about">About</a>
-        <a href="/business">business</a>
+        <a href="/businesses">business</a>
     @show
 </nav>
 <div class="container">
@@ -26,7 +26,6 @@
         @unless (Auth::check())
             <p>You are not signed in.</p>
         @endunless
-
 
         @section('main-content')@show
     </div>
