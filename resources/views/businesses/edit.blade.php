@@ -12,9 +12,19 @@
 @stop
 
 @section('main-content')
-    {!! Form::model($business) !!}
-    {!! Form::text('business_name') !!}
-    {!! Form::text('category') !!}
-    {!! Form::text('category') !!}
+    {!! Form::model($business, ['url' => 'businesses/'. $business->business_reference, 'method' => 'PATCH']) !!}
+
+    <div class="form-group">
+        {!! Form::text('business_name', null, ['class' =>'form-control']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::text('category', null,  ['class' =>'form-control']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::textarea('about', null,  ['class' =>'form-control'])  !!}
+    </div>
+    <div class="form-group">
+        {!! Form::submit('Update Details', ['class' =>'btn btn-primary'])  !!}
+    </div>
     {!! Form::close() !!}
 @stop

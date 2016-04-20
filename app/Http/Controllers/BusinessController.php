@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\BusinessDetail;
-use Doctrine\DBAL\Schema\View;
+use Illuminate\View;
 
 /**
  * Controller method the manages Businesses
@@ -39,9 +39,9 @@ class BusinessController extends Controller
      * @param $business_reference
      * @return View
      */
-    public function show($business_reference)
+    public function show(BusinessDetail $business)
     {
-        $business = $this->business->whereBusinessReference($business_reference)->first();
+        //$business = $this->business->whereBusinessReference($business_reference)->first();
         return view('businesses.show', compact('business'));
     }
 
@@ -50,10 +50,24 @@ class BusinessController extends Controller
      * @param $business_reference
      * @return View
      */
-    public function edit($business_reference)
+    public function edit(BusinessDetail $business)
     {
-        $business = $this->business->whereBusinessReference($business_reference)->first();
+        //$business = $this->business->whereBusinessReference($business_reference)->first();
         return view('businesses.edit', compact('business'));
+
+    }
+
+    /**
+     * Update details of a selected Business
+     * @param $business_reference
+     * @return View
+     */
+    public function update(BusinessDetail $business)
+    {
+        //$business = $this->business->whereBusinessReference($business_reference)->first();
+        dd(\Request::get('title'));
+        //return view('businesses.update', compact('business'));
+        return "God is great";
 
     }
 }

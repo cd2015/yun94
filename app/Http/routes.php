@@ -1,5 +1,7 @@
 <?php
 
+use App\BusinessDetail;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,15 +13,14 @@
 |
 */
 
-/*
-Route::bind('page_address', function($reference){
- return App\BusinessDetail::whereBusinessReference($reference)->first();"";
+Route::bind('business', function ($reference) {
+    return BusinessDetail::whereBusinessReference($reference)->first();
 });
-*/
 
 Route::get('/', 'PagesController@index');
 Route::get('about', 'PagesController@about');
 
 Route::get('businesses', 'BusinessController@index');
-Route::get('businesses/{business_reference}', 'BusinessController@show');
-Route::get('businesses/{business_reference}/edit', 'BusinessController@edit');
+Route::get('businesses/{business}', 'BusinessController@show');
+Route::get('businesses/{business}/edit', 'BusinessController@edit');
+Route::patch('businesses/{business}', 'BusinessController@update');

@@ -8,7 +8,6 @@
 @stop
 
 @section('sidebar')@stop
-
 @section('main-content')
     <p>{{$business->business_name}}</p>
     <p>{{$business->category}}</p>
@@ -28,4 +27,5 @@
     <p>{{$business->active}}</p>
     <p>{{$business->created_at}}</p>
     <p>{{$business->updated_at}}</p>
+    <a href="{{$business->business_reference}}/edit">EDIT</a>
 @stop
