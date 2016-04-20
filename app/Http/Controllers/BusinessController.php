@@ -36,38 +36,38 @@ class BusinessController extends Controller
 
     /**
      *Show details of a selected Business
-     * @param $business_reference
+     * @param $reference
      * @return View
      */
     public function show(BusinessDetail $business)
     {
-        //$business = $this->business->whereBusinessReference($business_reference)->first();
+        //$business = $this->business->whereReference($reference)->first();
         return view('businesses.show', compact('business'));
     }
 
     /**
      * Edit details of a selected Business
-     * @param $business_reference
+     * @param $reference
      * @return View
      */
     public function edit(BusinessDetail $business)
     {
-        //$business = $this->business->whereBusinessReference($business_reference)->first();
+        //$business = $this->business->whereReference($reference)->first();
         return view('businesses.edit', compact('business'));
 
     }
 
     /**
      * Update details of a selected Business
-     * @param $business_reference
+     * @param $reference
      * @return View
      */
     public function update(BusinessDetail $business)
     {
-        //$business = $this->business->whereBusinessReference($business_reference)->first();
+        //$business = $this->business->whereReference($reference)->first();
         dd(\Request::get('title'));
         //return view('businesses.update', compact('business'));
-        return "God is great";
+        //return "God is great";
 
     }
 }

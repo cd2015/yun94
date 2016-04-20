@@ -14,7 +14,7 @@ use App\BusinessDetail;
 */
 
 Route::bind('business', function ($reference) {
-    return BusinessDetail::whereBusinessReference($reference)->first();
+    return BusinessDetail::whereReference($reference)->first();
 });
 
 Route::get('/', 'PagesController@index');

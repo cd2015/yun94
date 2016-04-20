@@ -27,5 +27,5 @@
     <p>{{$business->active}}</p>
     <p>{{$business->created_at}}</p>
     <p>{{$business->updated_at}}</p>
-    <a href="{{$business->business_reference}}/edit">EDIT</a>
+    <a href="{{$business->reference}}/edit">EDIT</a>
 @stop

@@ -12,7 +12,7 @@
 @stop
 
 @section('main-content')
-    {!! Form::model($business, ['url' => 'businesses/'. $business->business_reference, 'method' => 'PATCH']) !!}
+    {!! Form::model($business, ['url' => 'businesses/'. $business->reference, 'method' => 'PATCH']) !!}
 
     <div class="form-group">
         {!! Form::text('name', null, ['class' =>'form-control']) !!}
