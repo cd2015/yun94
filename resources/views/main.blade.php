@@ -3,7 +3,9 @@
 <head>
     <title>Yuunga | @yield('page-title', 'Yuunga | The Digital Directory')</title>
     <!--<link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">-->
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/app.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+
 </head>
 <body>
 <nav class="navigation">
