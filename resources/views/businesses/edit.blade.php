@@ -1,10 +1,10 @@
 {{-- Yuunga Business Layout Module --}}
 @extends('main')
 
-@section('page-title', "Business - {$business->business_name}")
+@section('page-title', "Business - {$business->name}")
 
 @section('main-header')
-    {{$business->business_name}}
+    {{$business->name}}
 @stop
 
 @section('sidebar')
@@ -15,7 +15,7 @@
     {!! Form::model($business, ['url' => 'businesses/'. $business->business_reference, 'method' => 'PATCH']) !!}
 
     <div class="form-group">
-        {!! Form::text('business_name', null, ['class' =>'form-control']) !!}
+        {!! Form::text('name', null, ['class' =>'form-control']) !!}
     </div>
     <div class="form-group">
         {!! Form::text('category', null,  ['class' =>'form-control']) !!}

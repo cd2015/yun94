@@ -12,7 +12,7 @@ class ChangeBusinessNameInBusinessDetailsTable extends Migration
      */
     public function up()
     {
-        //ALTER TABLE `business_details` CHANGE `business_name` `name` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL;
+        //ALTER TABLE `business_details` CHANGE `name` `name` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL;
     }
 
     /**

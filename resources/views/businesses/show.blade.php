@@ -1,15 +1,15 @@
 {{-- Yuunga Business Layout Module --}}
 @extends('main')
 
-@section('page-title', "Business - {$business->business_name}")
+@section('page-title', "Business - {$business->name}")
 
 @section('main-header')
-    {{$business->business_name}}
+    {{$business->name}}
 @stop
 
 @section('sidebar')@stop
 @section('main-content')
-    <p>{{$business->business_name}}</p>
+    <p>{{$business->name}}</p>
     <p>{{$business->category}}</p>
     <p>{{$business->tel_no}}</p>
     <p>{{$business->mobile_no}}</p>
