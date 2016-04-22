@@ -12,7 +12,7 @@
     @section('navigation')
         <a href="/">Home</a>
         <a href="/about">About</a>
-        <a href="/businesses">business</a>
+        <a href="{{route('businesses_path')}}">business</a>
     @show
 </nav>
 <div class="container">

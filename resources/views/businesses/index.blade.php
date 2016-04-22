@@ -15,7 +15,7 @@
 @section('main-content')
     @forelse($businesses as $business )
         <ul>
-            <li><a href="/businesses/{{$business->reference}}">{{$business->name}}</a></li>
+            <li><a href="{{route('business_path',[$business->reference])}}">{{$business->name}}</a></li>
         </ul>
     @empty
         <p>Look, no business found</p>

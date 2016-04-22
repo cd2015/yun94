@@ -13,14 +13,29 @@ use App\BusinessDetail;
 |
 */
 
-Route::bind('business', function ($reference) {
+Route::bind('businesses', function ($reference) {
     return BusinessDetail::whereReference($reference)->first();
 });
-
 Route::get('/', 'PagesController@index');
 Route::get('about', 'PagesController@about');
+/*
 
-Route::get('businesses', 'BusinessController@index');
-Route::get('businesses/{business}', 'BusinessController@show');
+Route::get('businesses', ['as' => 'businesses_path, 'uses' => BusinessController@index']);
+Route::get('businesses/{business}', ['as' => 'business_path' 'uses' => BusinessController@show']);
 Route::get('businesses/{business}/edit', 'BusinessController@edit');
 Route::patch('businesses/{business}', 'BusinessController@update');
+*/
+Route::resource('businesses', 'BusinessController', [
+    'only' => [
+        'index', 'show', 'edit', 'update',
+    ],
+    'names' => [
+        'index' => 'businesses_path',
+        'show' => 'business_path',
+    ]
+    /*
+    'except' => [
+        'create'
+    ]
+    */
+]);

@@ -43,6 +43,7 @@ class BusinessController extends Controller
     public function show(BusinessDetail $business)
     {
         //$business = $this->business->W($reference)->first();
+        //dd($business);
         return view('businesses.show', compact('business'));
     }
 
@@ -83,7 +84,7 @@ class BusinessController extends Controller
         $business->save();;
         */
         $business->fill($request->input())->save();
-        return redirect('businesses');
+        return redirect("businesses/{$business->reference}");
 
     }
 }
