@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\BusinessDetail;
+use Illuminate\Http\Request;
 use Illuminate\View;
 
 /**
@@ -36,18 +37,18 @@ class BusinessController extends Controller
 
     /**
      *Show details of a selected Business
-     * @param $reference
+     * @param BusinessDetail $business
      * @return View
      */
     public function show(BusinessDetail $business)
     {
-        //$business = $this->business->whereReference($reference)->first();
+        //$business = $this->business->W($reference)->first();
         return view('businesses.show', compact('business'));
     }
 
     /**
      * Edit details of a selected Business
-     * @param $reference
+     * @param BusinessDetail $business
      * @return View
      */
     public function edit(BusinessDetail $business)
@@ -59,15 +60,30 @@ class BusinessController extends Controller
 
     /**
      * Update details of a selected Business
-     * @param $reference
+     * @param BusinessDetail $business
+     * @param Request $request
      * @return View
      */
-    public function update(BusinessDetail $business)
+    public function update(BusinessDetail $business, Request $request)
     {
         //$business = $this->business->whereReference($reference)->first();
-        dd(\Request::get('title'));
+        //dd($request->get('name'));
         //return view('businesses.update', compact('business'));
         //return "God is great";
+
+        //$business->name = $request->get('name')->save;
+       // $business->name = $request->get('name');
+        /*
+        $business->fill([
+            "name" => $request->get('name'),
+            "category" => $request->get('category'),
+            "about" => $request->get('about'),
+        ]);
+        //dd($business);
+        $business->save();;
+        */
+        $business->fill($request->input())->save();
+        return redirect('businesses');
 
     }
 }

@@ -9,19 +9,26 @@
 
 @section('sidebar')@stop
 @section('main-content')
-    <p>{{$business->name}}</p>
-    <p>{{$business->category}}</p>
-    <p>{{$business->tel_no}}</p>
+    <p>name: {{$business->name}}</p>
+    <p>category: {{$business->category}}</p>
+    <p>tel_no: {{$business->tel_no}}</p>
     <p>{{$business->mobile_no}}</p>
     <p>{{$business->email}}</p>
     <p>{{$business->website}}</p>
     <p>{{$business->facebook}}</p>
     <p>{{$business->twitter}}</p>
     <p>{{$business->postal_add}}</p>
-    <p>{{$business->location}}</p>
+    <p>location: {{$business->location}}</p>
     <p>{{$business->region}}</p>
-    <p>{{$business->about}}</p>
-    <p>{{$business->logo}}</p>
+    @if($business->about)
+        <article>
+            about:
+            <hr>
+            <br/> {!! nl2br($business->about)!!}
+            <hr>
+        </article>
+    @endif
+    <p>logo: {{$business->logo}}</p>
     <p>{{$business->rating}}</p>
     <p>{{$business->user_id}}</p>
     <p>{{$business->active}}</p>
