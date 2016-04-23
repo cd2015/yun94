@@ -34,5 +34,5 @@
     <p>{{$business->active}}</p>
     <p>{{$business->created_at}}</p>
     <p>{{$business->updated_at}}</p>
-    <a href="{{$business->reference}}/edit">EDIT</a>
+    {!! link_to_route('business_edit_path', 'Edit', [$business->reference], ['class' => ''], $secure='') !!}
 @stop

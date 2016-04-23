@@ -12,6 +12,7 @@
 @stop
 
 @section('main-content')
+    {!! link_to_action('BusinessController@show','kiil this bitch', [$business->reference], ['class'=>'link']) !!}}
     {!! Form::model($business, ['url' => 'businesses/'. $business->reference, 'method' => 'PATCH', 'class' =>'form-horizontal']) !!}
 
     <div class="form-group">

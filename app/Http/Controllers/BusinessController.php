@@ -35,6 +35,17 @@ class BusinessController extends Controller
         return view('businesses.index', compact('businesses'));
     }
 
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store()
+    {
+        "Am so paid";
+    }
+
     /**
      *Show details of a selected Business
      * @param BusinessDetail $business
@@ -42,8 +53,6 @@ class BusinessController extends Controller
      */
     public function show(BusinessDetail $business)
     {
-        //$business = $this->business->W($reference)->first();
-        //dd($business);
         return view('businesses.show', compact('business'));
     }
 
@@ -54,7 +63,6 @@ class BusinessController extends Controller
      */
     public function edit(BusinessDetail $business)
     {
-        //$business = $this->business->whereReference($reference)->first();
         return view('businesses.edit', compact('business'));
 
     }
@@ -67,22 +75,6 @@ class BusinessController extends Controller
      */
     public function update(BusinessDetail $business, Request $request)
     {
-        //$business = $this->business->whereReference($reference)->first();
-        //dd($request->get('name'));
-        //return view('businesses.update', compact('business'));
-        //return "God is great";
-
-        //$business->name = $request->get('name')->save;
-       // $business->name = $request->get('name');
-        /*
-        $business->fill([
-            "name" => $request->get('name'),
-            "category" => $request->get('category'),
-            "about" => $request->get('about'),
-        ]);
-        //dd($business);
-        $business->save();;
-        */
         $business->fill($request->input())->save();
         return redirect("businesses/{$business->reference}");
 
