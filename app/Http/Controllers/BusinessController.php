@@ -95,4 +95,16 @@ class BusinessController extends Controller
         return redirect("businesses/{$business->reference}");
 
     }
+
+    /**
+     * Delete a selected Business
+     * @param BusinessDetail $business
+     * @return View
+     */
+    public function destroy(BusinessDetail $business)
+    {
+        $business->delete();
+        return redirect('businesses');
+
+    }
 }
