@@ -46,6 +46,13 @@
         {!! Form::textarea('about', null,  ['class' =>'form-control'])  !!}
     </div>
 </div>
-<div class="form-group">
-    {!! Form::submit('Update Details', ['class' =>'btn btn-primary'])  !!}
-</div>
+@section('update-button')
+    <div class="form-group">
+        {!! Form::submit('Update Business', ['class' =>'btn btn-primary'])  !!}
+    </div>
+@stop
+@section('add-button')
+    <div class="form-group">
+        {!! Form::submit('Add Business', ['class' =>'btn btn-info'])  !!}
+    </div>
+@stop

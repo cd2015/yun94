@@ -13,5 +13,6 @@
 @section('main-content')
     {!! Form::open(['route' => 'businesses_path', 'class' =>'form-horizontal']) !!}
     @include('businesses._form')
+    @yield('add-button')
     {!! Form::close() !!}
 @stop
