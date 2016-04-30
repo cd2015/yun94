@@ -28,6 +28,7 @@ Route::resource('businesses', 'BusinessController', [
         'show' => 'business_path',
         'edit' => 'business_edit_path',
         'create' => 'business_create_path',
+        //'delete' => 'business_delete_path',
     ]
     /* 'except' => ['create'] */
 ]);

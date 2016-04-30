@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Http\Requests\CreateBusinessRequest;
 use App\BusinessDetail;
 use Illuminate\Http\Request;
 use Illuminate\View;
@@ -49,9 +50,11 @@ class BusinessController extends Controller
     /**
      * Show the form for storing a new resource.
      *
+     * @param BusinessDetail $business
+     * @param CreateBusinessRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BusinessDetail $business, Request $request)
+    public function store(CreateBusinessRequest $request, BusinessDetail $business)
     {
         $business->user_id = rand(100, 120); //Replace it later
         $business->fill($request->all())->save();
