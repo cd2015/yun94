@@ -9,17 +9,19 @@
 
 @section('sidebar')
     @parent
-    <p>This is appended to the master sidebar.</p>
+    <p>
+        {!! link_to_route('business_create_path', 'Add New Business', [], ['class'=>'',]) !!}
+    </p>
 @stop
 
 @section('main-content')
-    @forelse($businesses as $business )
-        <ul>
+    <ul>
+        @forelse($businesses as $business )
             <li>
                 {!! link_to_route('business_path', $business->name, [$business->reference], ['class'=>'',], $secure='') !!}
             </li>
-        </ul>
-    @empty
-        <p>Look, no business found</p>
-    @endforelse
+        @empty
+            <p>Look, no business found</p>
+        @endforelse
+    </ul>
 @stop
