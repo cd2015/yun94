@@ -13,8 +13,6 @@
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="{{route('businesses_path')}}">business</a>
-        {!! link_to('/sowed', 'sowed is coming', ['class'=>'link', 'id'=>'buttonSowed'], $secure='true') !!}
-        {!! link_to_asset('/sowed', 'sowed is coming', ['class'=>'link', 'id'=>'buttonSowed'], $secure='true') !!}
     @show
 </nav>
 <div class="container">
