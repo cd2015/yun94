@@ -21,12 +21,13 @@ Route::get('about', 'PagesController@about');
 
 Route::resource('businesses', 'BusinessController', [
     'only' => [
-        'index', 'show', 'edit', 'update',
+        'index', 'show', 'edit', 'update', 'create', 'store',
     ],
     'names' => [
         'index' => 'businesses_path',
         'show' => 'business_path',
         'edit' => 'business_edit_path',
+        'create' => 'business_create_path',
     ]
     /* 'except' => ['create'] */
 ]);

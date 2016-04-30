@@ -41,9 +41,22 @@ class BusinessController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function create()
     {
-        "Am so paid";
+        return view('businesses.create');
+    }
+
+    /**
+     * Show the form for storing a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store(BusinessDetail $business, Request $request)
+    {
+        $business->user_id = rand(100, 120); //Replace it later
+        $business->fill($request->all())->save();
+        //$business->create($request->all());
+        return redirect()->route('businesses_path');
     }
 
     /**
