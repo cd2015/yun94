@@ -91,7 +91,8 @@ class BusinessController extends Controller
      */
     public function update(BusinessDetail $business, Request $request)
     {
-        $business->fill($request->input())->save();
+        //$business->fill($request->input())->save();
+        $business->update($request->input());
         return redirect("businesses/{$business->reference}");
 
     }
