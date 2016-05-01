@@ -56,9 +56,9 @@ class BusinessController extends Controller
      */
     public function store(CreateBusinessRequest $request, BusinessDetail $business)
     {
-        $business->user_id = rand(100, 120); //Replace it later
-        $business->fill($request->all())->save();
-        //$business->create($request->all());
+        $input = $request->all();
+        $input['user_id'] = rand(100, 120); //Replace it later
+        $business->create($input);
         return redirect()->route('businesses_path');
     }
 
