@@ -7,13 +7,6 @@
         {!! $errors->first('name', '<span class="help-block">:message</span>') !!}
     </div>
 </div>
-<div class="form-group {{$errors->has('reference')?'has-error':''}}">
-    {!! Form::label('reference', 'Slug', ['class' =>'control-label  col-sm-2']) !!}
-    <div class=" col-sm-10">
-        {!! Form::text('reference', null, ['class' =>'form-control']) !!}
-        {!! $errors->first('reference', '<span class="help-block">:message</span>') !!}
-    </div>
-</div>
 <div class="form-group">
     {!! Form::label('logo', 'Logo', ['class' =>'control-label  col-sm-2']) !!}
     <div class=" col-sm-10">
