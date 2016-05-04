@@ -32,7 +32,7 @@ class BusinessController extends Controller
      */
     public function index()
     {
-        $businesses = $this->business->get();
+        $businesses = $this->business->latest()->get();
         return view('businesses.index', compact('businesses'));
     }
 
