@@ -25,7 +25,6 @@ class CreateBusinessRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'reference' => 'required | unique:business_details,reference',
             'category' => 'required',
             'tel_no' => 'required',
         ];
