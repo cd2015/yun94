@@ -31,3 +31,6 @@ Route::resource('businesses', 'BusinessController', [
         'destroy' => 'business_delete_path',
     ]
 ]);
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
