@@ -58,6 +58,8 @@ class BusinessController extends Controller
     {
         $input = $request->all();
         $input['user_id'] = rand(100, 120); //Replace it later
+        $input['reference'] = slugify($input['name']);
+        dd($input);
         $business->create($input);
         return redirect()->route('businesses_path');
     }
