@@ -161,3 +161,8 @@ a:hover {
     font-size: 96px;
     font-family: 'Raleway-Thin-Yg', 'Lato', sans-serif;
 }
+
+input, select {
+    color: #444;
+    padding: 8px;
+}

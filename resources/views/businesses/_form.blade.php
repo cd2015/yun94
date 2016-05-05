@@ -20,6 +20,13 @@
         {!! $errors->first('category', '<span class="help-block">:message</span>') !!}
     </div>
 </div>
+<div class="form-group {{$errors->has('category')?'has-error':''}}">
+    {!! Form::label('category2', 'Category 2', ['class' =>'control-label  col-sm-2']) !!}
+    <div class=" col-sm-10">
+        {!! Form::select('category2', $sections,  ['class' =>'form-control']) !!}
+        {!! $errors->first('category', '<span class="help-block">:message</span>') !!}
+    </div>
+</div>
 <div class="form-group {{$errors->has('tel_no')?'has-error':''}}">
     {!! Form::label('tel_no', 'Mobile', ['class' =>'control-label  col-sm-2']) !!}
     <div class=" col-sm-10">

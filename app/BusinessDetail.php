@@ -77,5 +77,6 @@ class BusinessDetail extends Eloquent
         'rating',
         'user_id',
         'reference',
+        'category2'
     ];
 }
