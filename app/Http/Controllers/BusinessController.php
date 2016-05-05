@@ -44,8 +44,7 @@ class BusinessController extends Controller
      */
     public function create()
     {
-        $sections = BusinessDetail::lists('name', 'name');
-        return view('businesses.create', compact('sections'));
+        return view('businesses.create');
     }
 
     /**
@@ -58,7 +57,6 @@ class BusinessController extends Controller
     public function store(CreateBusinessRequest $request, BusinessDetail $business)
     {
         $input = $request->all();
-        dd($input['category2']);
         $input['user_id'] = rand(100, 120); //Replace it later
         $input['reference'] = slugify($input['name']);
         $business->create($input);
