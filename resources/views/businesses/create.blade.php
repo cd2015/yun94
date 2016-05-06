@@ -1,7 +1,7 @@
 {{-- Yuunga Business Layout Module --}}
 @extends('main')
 
-@section('page-title', "Yuunga - Add a new Business")
+@section('page-title', "Add a new Business")
 
 @section('main-header')
     Add a new Business
