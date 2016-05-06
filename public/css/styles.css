@@ -145,7 +145,7 @@ a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.container {
+.main-business.container {
     text-align: center;
     display: table-cell;
     vertical-align: middle;
@@ -165,4 +165,14 @@ a:hover {
 input, select {
     color: #444;
     padding: 8px;
+}
+
+/*Extracted from layout.app.blade.php*/
+
+.fa-btn {
+    margin-right: 6px;
+}
+
+label{
+    color: #888;
 }
