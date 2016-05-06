@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yuunga | @yield('page-title', 'Yuunga | The Digital Directory')</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Sowed Castelli">
+    <meta name="description" content="Yuunga | The Digital Directory">
+    <meta name="keywords" content="Yuunga, Uganda, Kampala, Digital, Directory, Businesses, Address, Connect">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if lte IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     <!--<link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">-->
-    <link rel="stylesheet" type="text/css" href="/css/app.css"/>
+    {{--<link rel="stylesheet" type="text/css" href="/css/app.css"/> --}}
+    <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
-
+    <link rel="apple-touch-icon" href="favicon.png">
 </head>
 <body>
 <nav class="navigation">
