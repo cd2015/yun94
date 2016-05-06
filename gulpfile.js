@@ -20,6 +20,7 @@ elixir(function (mix) {
         .copy(bootstrapPath + 'fonts', 'public/fonts')
         .copy(bootstrapPath + 'javascripts/bootstrap.min.js', 'public/js')
         .copy(bowerResources + 'font-awesome/fonts', 'public/fonts')
+        .copy(bowerResources + 'font-awesome/css/font-awesome.css', 'public/css')
         .copy(bowerResources + 'jquery/dist/jquery.min.js', 'public/js');
     mix.browserSync();
 });
