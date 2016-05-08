@@ -6,7 +6,7 @@ use App\Http\Requests;
 use App\Http\Requests\CreateBusinessRequest;
 use App\BusinessDetail;
 use Illuminate\Http\Request;
-use Illuminate\View;
+use Illuminate\View\View;
 
 /**
  * Controller method the manages Businesses
@@ -36,9 +36,8 @@ class BusinessController extends Controller
         return view('businesses.index', compact('businesses'));
     }
 
-
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new Business.
      *
      * @return \Illuminate\Http\Response
      */
@@ -48,7 +47,7 @@ class BusinessController extends Controller
     }
 
     /**
-     * Show the form for storing a new resource.
+     * Store a newly created Business in the database.
      *
      * @param BusinessDetail $business
      * @param CreateBusinessRequest $request
@@ -65,6 +64,7 @@ class BusinessController extends Controller
 
     /**
      *Show details of a selected Business
+     *
      * @param BusinessDetail $business
      * @return View
      */
@@ -75,6 +75,7 @@ class BusinessController extends Controller
 
     /**
      * Edit details of a selected Business
+     *
      * @param BusinessDetail $business
      * @return View
      */
@@ -86,6 +87,7 @@ class BusinessController extends Controller
 
     /**
      * Update details of a selected Business
+     *
      * @param BusinessDetail $business
      * @param Request $request
      * @return View
@@ -94,12 +96,14 @@ class BusinessController extends Controller
     {
         //$business->fill($request->input())->save();
         $business->update($request->input());
-        return redirect("businesses/{$business->reference}");
+        //return redirect("businesses/{$business->reference}");
+        return redirect()->route('business_path', $business->reference);
 
     }
 
     /**
      * Delete a selected Business
+     *
      * @param BusinessDetail $business
      * @return View
      */
