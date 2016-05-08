@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Http\Requests\CreateBusinessRequest;
+use App\Http\Requests\BusinessRequest;
 use App\BusinessDetail;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -49,11 +49,11 @@ class BusinessController extends Controller
     /**
      * Store a newly created Business in the database.
      *
+     * @param BusinessRequest $request
      * @param BusinessDetail $business
-     * @param CreateBusinessRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateBusinessRequest $request, BusinessDetail $business)
+    public function store(BusinessRequest $request, BusinessDetail $business)
     {
         $input = $request->all();
         $input['user_id'] = rand(100, 120); //Replace it later
@@ -88,11 +88,11 @@ class BusinessController extends Controller
     /**
      * Update details of a selected Business
      *
+     * @param BusinessRequest $request
      * @param BusinessDetail $business
-     * @param Request $request
      * @return View
      */
-    public function update(BusinessDetail $business, Request $request)
+    public function update(BusinessRequest $request, BusinessDetail $business)
     {
         //$business->fill($request->input())->save();
         $business->update($request->input());
