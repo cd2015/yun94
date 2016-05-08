@@ -1,7 +1,7 @@
 {{-- Yuunga Business Layout Module --}}
 @extends('main')
 
-@section('page-title', "Business - {$business->name}")
+@section('page-title', "{$business->name} - Business")
 
 @section('main-header')
     {{$business->name}}
@@ -16,5 +16,4 @@
     @include('businesses._form')
     @yield('update-button')
     {!! Form::close() !!}
-    {!! delete_form(['business_delete_path', $business->reference]) !!}
 @stop

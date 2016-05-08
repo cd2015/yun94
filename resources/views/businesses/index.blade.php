@@ -7,6 +7,11 @@
     Businesses
 @stop
 
+@section('navigation')
+    @parent
+    <a href="{{route('categories_path')}}">Categories</a>
+@stop
+
 @section('sidebar')
     @parent
     <p>

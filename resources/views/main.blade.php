@@ -30,7 +30,7 @@
     @section('navigation')
         <a href="/home">Home</a>
         <a href="/about">About</a>
-        <a href="{{route('businesses_path')}}">business</a>
+        <a href="{{route('businesses_path')}}">Business</a>
     @show
 </nav>
 <div class="main-business container">
