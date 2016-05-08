@@ -50,7 +50,7 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 class BusinessDetail extends Eloquent
 {
     /*
-    protected $table = 'Business_Details';
+    protected $table = 'business_details';
     protected $primaryKey = 'id';
     public $timestamps = true;
     */
