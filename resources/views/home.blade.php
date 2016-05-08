@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('page-title', 'Your Digital Control Panel')
 
 @section('content')
 <div class="container">

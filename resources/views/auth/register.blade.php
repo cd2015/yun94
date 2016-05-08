@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('page-title', 'Register to create an Account')
 
 @section('content')
 <div class="container">
