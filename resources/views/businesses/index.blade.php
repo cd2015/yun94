@@ -20,13 +20,13 @@
 @stop
 
 @section('main-content')
-    <ul>
-        @forelse($businesses as $business )
+    @forelse($businesses as $business )
+        <ul>
             <li>
                 {!! link_to_route('business_path', $business->name, [$business->reference], ['class'=>'',], $secure='') !!}
             </li>
-        @empty
-            <p>Look, no business found</p>
-        @endforelse
-    </ul>
+        </ul>
+    @empty
+        <p>Look, no business found</p>
+    @endforelse
 @stop

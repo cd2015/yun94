@@ -21,14 +21,14 @@
 @stop
 
 @section('main-content')
-    <ul>
-        @forelse($categories as $category )
+    @forelse($categories as $category )
+        <ul>
             <li>
                 {!! link_to_route('category_path', $category->name, [$category->id], ['class'=>'',]) !!}
             </li>
-        @empty
-            <p>Look, no Category found</p>
-            {!! link_to_route('category_create_path', '+ Add', [], ['class'=>'',]) !!}
-        @endforelse
-    </ul>
+        </ul>
+    @empty
+        <p>Look, no Category found</p>
+        {!! link_to_route('category_create_path', '+ Add', [], ['class'=>'',]) !!}
+    @endforelse
 @stop
