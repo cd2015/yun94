@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('page-title', 'The Digital Directory')
+@section('page-title','Welcome Home')
 
 @section('main-header')
     Yuunga

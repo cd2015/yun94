@@ -2,7 +2,7 @@
 
 @extends('main')
 
-@section('page-title', "Category - {$category->name}")
+@section('page-title', "{$category->name} - Category")
 
 @section('main-header')
     {{$category->name}}

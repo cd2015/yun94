@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('page-title', 'Welcome to your Digital Directory')
+@section('page-title', 'Welcome')
 
 @section('content')
 <div class="container">

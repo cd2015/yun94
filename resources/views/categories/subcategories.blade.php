@@ -1,7 +1,7 @@
 {{-- Yuunga Category Layout Module --}}
 @extends('main')
 
-@section('page-title', 'Categories')
+@section('page-title', 'Sub Categories')
 
 @section('main-header')
     Sub Categories

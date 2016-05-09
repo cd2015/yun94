@@ -1,7 +1,7 @@
 {{-- Yuunga Category Layout Module --}}
 @extends('main')
 
-@section('page-title', "{$category->name} - Category")
+@section('page-title', "Edit Category {$category->name}")
 
 @section('main-header')
     {{$category->name}}

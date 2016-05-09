@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Yuunga | @yield('page-title', 'Yuunga | The Digital Directory')</title>
+    <title>@yield('page-title', 'Welcome') | Yuunga - The Digital Directory</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="Sowed Castelli">
-    <meta name="description" content="Yuunga | The Digital Directory">
-    <meta name="keywords" content="Yuunga, Uganda, Kampala, Digital, Directory, Businesses, Address, Connect">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="Sowed Castelli" name="author">
+    <meta content="Yuunga | The Digital Directory" name="description">
+    <meta content="Yuunga, Uganda, Kampala, Digital, Directory, Businesses, Address, Connect" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <!--[if lte IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->

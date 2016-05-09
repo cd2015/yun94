@@ -1,7 +1,7 @@
 {{-- Yuunga Business Layout Module --}}
 @extends('main')
 
-@section('page-title', "Business - {$business->name}")
+@section('page-title', "{$business->name} - Business")
 
 @section('main-header')
     {{$business->name}}
