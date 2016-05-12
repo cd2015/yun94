@@ -1,3 +1,44 @@
+/* Sofia Pro Custom fonts 5 Weights*/
+@font-face {
+    font-family: 'sofia_problack';
+    src: url('../fonts/Sofia/sofia_pro_black-webfont.woff2') format('woff2'),
+    url('../fonts/Sofia/sofia_pro_black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sofia_proextra_light';
+    src: url('../fonts/Sofia/sofia_pro_extra_light-webfont.woff2') format('woff2'),
+    url('../fonts/Sofia/sofia_pro_extra_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sofia_prolight';
+    src: url('../fonts/Sofia/sofia_pro_light-webfont.woff2') format('woff2'),
+    url('../fonts/Sofia/sofia_pro_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sofia_promedium';
+    src: url('../fonts/Sofia/sofia_pro_medium-webfont.woff2') format('woff2'),
+    url('../fonts/Sofia/sofia_pro_medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sofia_proregular';
+    src: url('../fonts/Sofia/sofia_pro_regular-webfont.woff2') format('woff2'),
+    url('../fonts/Sofia/sofia_pro_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @font-face {
     font-family: 'Raleway-Thin-Yg';
     src: local(Raleway-Thin), local(raleway-thin), local(Raleway Thin),
@@ -10,7 +51,7 @@
     font-family: 'Raleway-Light-Yg';
     src: url('../fonts/Raleway-Light.ttf') format('truetype');
 }
-
+/* Raleway Custom fonts 3 Weights*/
 @font-face {
     font-family: 'Raleway-Medium-Yg';
     src: url('../fonts/Raleway-Medium.ttf') format('truetype');
@@ -28,9 +69,9 @@
 
 html, body {
     height: 100%;
-    -webkit-font-smoothing: subpixel-antialiased;
+/ / -webkit-font-smoothing: subpixel-antialiased;
     -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke: 0.1px;
+    -webkit-text-stroke-width: 0.1px;
 }
 
 body {
@@ -40,7 +81,7 @@ body {
     display: table;
     font-weight: lighter;
     font-size: 14px;
-    font-family: 'Raleway-Regular-Yg', 'Lato', sans-serif;
+    font-family: 'sofia_prolight', 'Lato', sans-serif;
     color: #fff;
     -webkit-text-size-adjust: none;
     -webkit-touch-callout: none;
@@ -159,7 +200,7 @@ a:hover {
 
 .title {
     font-size: 96px;
-    font-family: 'Raleway-Thin-Yg', 'Lato', sans-serif;
+    font-family: 'sofia_prolight', 'Lato', sans-serif;
 }
 
 input, select {
@@ -173,6 +214,6 @@ input, select {
     margin-right: 6px;
 }
 
-label{
+label {
     color: #888;
 }
