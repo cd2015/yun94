@@ -16,7 +16,6 @@ class CreateBusinessDetailsTable extends Migration
             $table->increments('id');
             $table->string('name', 150)->unique();
             $table->string('reference', 200)->unique();
-            $table->string('category', 40);
             $table->string('tel_no', 15);
             $table->string('mobile_no', 15)->nullable();
             $table->string('email', 64)->nullable();
@@ -27,11 +26,22 @@ class CreateBusinessDetailsTable extends Migration
             $table->text('location');
             $table->string('region', 50);
             $table->text('about');
-            $table->string('logo', 100)->nullable()->default('logo_placeholder.jpg');
+            $table->string('logo', 100)->nullable()->default('yunga_business_logo_placeholder.jpg');
             $table->integer('rating')->nullable();
-            $table->integer('user_id')->unsigned()->unique();
+            $table->string('category_id')->unsigned();;
+            $table->integer('user_id')->unsigned();
             $table->boolean('active')->default(0);
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('user')
+                ->onDelete('cascade');
+
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('user')
+                ->onDelete('cascade');
         });
     }
 
