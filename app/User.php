@@ -42,4 +42,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * A user can have many businesses
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function businesses()
+    {
+        return $this->hasMany('\App\BusinessDetail');
+    }
 }
