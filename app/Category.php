@@ -29,9 +29,20 @@ class Category extends Model
 
     /**
      * Fillable(Mass Assignable) details of a category
+     *
      * @var array
      */
     protected $fillable = [
         'name', 'slug',
     ];
+
+    /**
+     * A category can have many subcategories
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function subcategories()
+    {
+        return $this->hasMany('\App\SubCategory');
+    }
 }
