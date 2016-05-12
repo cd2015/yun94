@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignKeysToBusinessDetails extends Migration
+class AddForeignKeysToBusinessDetailsTable extends Migration
 {
     /**
      * Add the 'user_id' and 'category_id' foreign keys
