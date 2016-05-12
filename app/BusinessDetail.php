@@ -83,6 +83,16 @@ class BusinessDetail extends Eloquent
     ];
 
     /**
+     * A business belongs to a specific user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo('\App\User');
+    }
+
+    /**
      * A business belongs to a specific category
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
