@@ -3,7 +3,8 @@
  */
 $(document).ready(function () {
     var maxInput = 5, n = 1;
-    $(document).on('click', '.add-field-btn', function () {
+    $(document).on('click', '.add-field-btn', function (e) {
+        e.preventDefault();
         var controlForm = $('#subcategories_fields'),
             currentEntry = $(this).parents('.entry:first');
         if (n < maxInput) {
@@ -19,7 +20,8 @@ $(document).ready(function () {
                 .html('<span class="glyphicon glyphicon-minus" title="Remove field"></span>');
             n++;
         }
-    }).on('click', '.remove-field-btn', function () {
+    }).on('click', '.remove-field-btn', function (e) {
+        e.preventDefault();
         $(this).parents('.entry:first').remove();
         n--;
         return false;

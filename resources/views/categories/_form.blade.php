@@ -17,9 +17,9 @@
             <input class="form-control" name="employee[0][name]" type="text" placeholder="Enter a Sub Category"/>
 
             <div class="input-group-btn">
-                <div class="btn btn-success add-field-btn" type="button">
+                <button class="btn btn-success add-field-btn" type="button">
                     <span class="glyphicon glyphicon-plus"></span>
-                </div>
+                </button>
             </div>
         </div>
     </div>
