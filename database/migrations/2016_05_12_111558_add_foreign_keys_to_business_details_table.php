@@ -36,8 +36,8 @@ class AddForeignKeysToBusinessDetailsTable extends Migration
     public function down()
     {
         Schema::table('business_details', function (Blueprint $table) {
-            $table->dropForeign('user_id');
-            $table->dropForeign('category_id');
+            $table->dropForeign('business_details_user_id_foreign');
+            $table->dropForeign('business_details_category_id_foreign');
         });
     }
 }
