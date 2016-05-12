@@ -51,6 +51,7 @@
     font-family: 'Raleway-Light-Yg';
     src: url('../fonts/Raleway-Light.ttf') format('truetype');
 }
+
 /* Raleway Custom fonts 3 Weights*/
 @font-face {
     font-family: 'Raleway-Medium-Yg';
@@ -216,4 +217,5 @@ input, select {
 
 label {
     color: #888;
+    font-weight:normal;
 }

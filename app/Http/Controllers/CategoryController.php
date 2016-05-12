@@ -22,6 +22,7 @@ class CategoryController extends Controller
 
     /**
      * CategoryController constructor.
+     *
      * @param Category $selectedCategory
      */
     public function __construct(Category $selectedCategory)
@@ -116,6 +117,8 @@ class CategoryController extends Controller
 
 
     /**
+     * List all Sub Categories
+     *
      * @return string
      */
     public function subCategories()
