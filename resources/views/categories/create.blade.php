@@ -12,6 +12,6 @@
 
 @section('main-content')
     {!! Form::open(['route' => 'categories_path', 'class' =>'form-horizontal']) !!}
-    @include('categories._form',['SubmitButtonText'=>'Create Category', 'SubmitButtonClass'=>'btn-danger'])
+    @include('categories._form',['SubmitButtonText'=>'Create Category', 'SubmitButtonClass'=>'btn-info'])
     {!! Form::close() !!}
 @stop
