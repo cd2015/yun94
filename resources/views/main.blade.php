@@ -35,7 +35,13 @@
 </nav>
 <div class="main-business container">
     @section('sidebar')
-        <p> Welcome {{$name or 'Client'}}. This is the master sidebar.</p>
+        <p> Welcome
+            @if(Auth::check())
+                {{Auth::user()->name}}. This is the master sidebar.
+            @else
+                Client. Please feel free to look around.
+            @endif
+        </p>
     @show
     <div class="content">
         <div class="title">

@@ -11,16 +11,11 @@ class PagesController extends Controller
 
     function index()
     {
-        $onlineUsers = ['Sowed', 'Dero', 'Jonel'];
-        //$onlineUsers = [];
-        $name = 'Sowed';
-        //return view('pages.home', ['name' => $name, 'onlineUsers' => $onlineUsers]);
-        return view('pages.home')->with('name', $name)->with('onlineUsers', $onlineUsers);
+        return view('pages.home');
     }
 
     function about()
     {
-        $onlineUsers = ['Castor', 'DarthVader', 'Luke'];
-        return view('pages.about', compact('onlineUsers'));
+        return view('pages.about');
     }
 }
