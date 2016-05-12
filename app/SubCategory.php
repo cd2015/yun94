@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
+use Carbon\Carbon;
 
 /**
  * App\SubCategory
@@ -11,14 +13,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $name
  * @property string $slug
  * @property string $category_id
- * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
- * @method static \Illuminate\Database\Query\Builder|\App\SubCategory whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\SubCategory whereName($value)
- * @method static \Illuminate\Database\Query\Builder|\App\SubCategory whereSlug($value)
- * @method static \Illuminate\Database\Query\Builder|\App\SubCategory whereCategoryId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\SubCategory whereCreatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\App\SubCategory whereUpdatedAt($value)
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ * @method static Builder|SubCategory whereId($value)
+ * @method static Builder|SubCategory whereName($value)
+ * @method static Builder|SubCategory whereSlug($value)
+ * @method static Builder|SubCategory whereCategoryId($value)
+ * @method static Builder|SubCategory whereCreatedAt($value)
+ * @method static Builder|SubCategory whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class SubCategory extends Model
@@ -38,6 +40,8 @@ class SubCategory extends Model
     ];
 
     /**
+     * A subcategory belongs to a specific category
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function category()
