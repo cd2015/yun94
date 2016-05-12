@@ -25,7 +25,7 @@ class BusinessRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'category' => 'required',
+            'category_id' => 'required',
             'tel_no' => 'required',
         ];
     }

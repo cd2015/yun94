@@ -10,7 +10,7 @@
 @section('sidebar')@stop
 @section('main-content')
     <p>name: {{$business->name}}</p>
-    <p>category: {{$business->category}}</p>
+    <p>category: {{$business->category->name}}</p>
     <p>tel_no: {{$business->tel_no}}</p>
     <p>{{$business->mobile_no}}</p>
     <p>{{$business->email}}</p>

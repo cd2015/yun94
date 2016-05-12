@@ -14,10 +14,10 @@
     </div>
 </div>
 <div class="form-group {{$errors->has('category')?'has-error':''}}">
-    {!! Form::label('category', 'Category', ['class' =>'control-label  col-sm-2']) !!}
+    {!! Form::label('category_id', 'Category', ['class' =>'control-label  col-sm-2']) !!}
     <div class=" col-sm-10">
-        {!! Form::text('category', null,  ['class' =>'form-control']) !!}
-        {!! $errors->first('category', '<span class="help-block">:message</span>') !!}
+        {!! Form::number('category_id', null,  ['class' =>'form-control']) !!}
+        {!! $errors->first('category_id', '<span class="help-block">:message</span>') !!}
     </div>
 </div>
 <div class="form-group {{$errors->has('tel_no')?'has-error':''}}">
