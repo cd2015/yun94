@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
+use Carbon\Carbon;
 
 /**
  * App\Category
@@ -10,13 +12,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $id
  * @property string $name
  * @property string $slug
- * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
- * @method static \Illuminate\Database\Query\Builder|\App\Category whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Category whereName($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Category whereSlug($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Category whereCreatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Category whereUpdatedAt($value)
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ * @method static Builder|Category whereId($value)
+ * @method static Builder|Category whereName($value)
+ * @method static Builder|Category whereSlug($value)
+ * @method static Builder|Category whereCreatedAt($value)
+ * @method static Builder|Category whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Category extends Model
@@ -44,5 +46,15 @@ class Category extends Model
     public function subcategories()
     {
         return $this->hasMany('\App\SubCategory');
+    }
+
+    /**
+     * A category can have many businesses
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function businesses()
+    {
+        return $this->hasMany('\App\BusinessDetail');
     }
 }
