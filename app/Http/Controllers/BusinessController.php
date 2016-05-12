@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Http\Requests;
 use App\Http\Requests\BusinessRequest;
 use App\BusinessDetail;
@@ -44,7 +45,8 @@ class BusinessController extends Controller
      */
     public function create()
     {
-        return view('businesses.create');
+        $categories = Category::pluck('name', 'id');
+        return view('businesses.create', compact('categories'));
     }
 
 
@@ -59,7 +61,6 @@ class BusinessController extends Controller
     {
         $input = $request->all();
         $input['user_id'] = Auth::user()->id;
-        //dd($input);
         $input['reference'] = slugify($input['name']);
         $business->create($input);
         return redirect()->route('businesses_path');
