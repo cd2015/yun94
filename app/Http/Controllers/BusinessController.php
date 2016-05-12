@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Requests\BusinessRequest;
 use App\BusinessDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 /**
@@ -46,6 +47,7 @@ class BusinessController extends Controller
         return view('businesses.create');
     }
 
+
     /**
      * Store a newly created Business in the database.
      *
@@ -56,7 +58,8 @@ class BusinessController extends Controller
     public function store(BusinessRequest $request, BusinessDetail $business)
     {
         $input = $request->all();
-        $input['user_id'] = rand(100, 120); //Replace it later
+        $input['user_id'] = Auth::user()->id;
+        //dd($input);
         $input['reference'] = slugify($input['name']);
         $business->create($input);
         return redirect()->route('businesses_path');
