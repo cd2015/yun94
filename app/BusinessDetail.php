@@ -1,6 +1,8 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Query\Builder;
+use Carbon\Carbon;
 
 /**
  * App\BusinessDetail
@@ -8,7 +10,6 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
  * @property integer $id
  * @property string $name
  * @property string $reference
- * @property string $category
  * @property string $tel_no
  * @property string $mobile_no
  * @property string $email
@@ -22,29 +23,30 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
  * @property string $logo
  * @property integer $rating
  * @property integer $user_id
+ * @property string $category_id
  * @property boolean $active
- * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereName($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereReference($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereCategory($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereTelNo($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereMobileNo($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereEmail($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereWebsite($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereFacebook($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereTwitter($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail wherePostalAdd($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereLocation($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereRegion($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereAbout($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereLogo($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereRating($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereUserId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereActive($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereCreatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\App\BusinessDetail whereUpdatedAt($value)
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ * @method static Builder|BusinessDetail whereId($value)
+ * @method static Builder|BusinessDetail whereName($value)
+ * @method static Builder|BusinessDetail whereReference($value)
+ * @method static Builder|BusinessDetail whereTelNo($value)
+ * @method static Builder|BusinessDetail whereMobileNo($value)
+ * @method static Builder|BusinessDetail whereEmail($value)
+ * @method static Builder|BusinessDetail whereWebsite($value)
+ * @method static Builder|BusinessDetail whereFacebook($value)
+ * @method static Builder|BusinessDetail whereTwitter($value)
+ * @method static Builder|BusinessDetail wherePostalAdd($value)
+ * @method static Builder|BusinessDetail whereLocation($value)
+ * @method static Builder|BusinessDetail whereRegion($value)
+ * @method static Builder|BusinessDetail whereAbout($value)
+ * @method static Builder|BusinessDetail whereLogo($value)
+ * @method static Builder|BusinessDetail whereRating($value)
+ * @method static Builder|BusinessDetail whereUserId($value)
+ * @method static Builder|BusinessDetail whereCategoryId($value)
+ * @method static Builder|BusinessDetail whereActive($value)
+ * @method static Builder|BusinessDetail whereCreatedAt($value)
+ * @method static Builder|BusinessDetail whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class BusinessDetail extends Eloquent
@@ -57,11 +59,11 @@ class BusinessDetail extends Eloquent
 
     /**
      * Fillable details of a business
+     *
      * @var array
      */
     protected $fillable = [
         'name',
-        'category',
         'about',
         'tel_no',
         'mobile_no',
@@ -76,6 +78,17 @@ class BusinessDetail extends Eloquent
         'logo',
         'rating',
         'user_id',
+        'category_id',
         'reference',
     ];
+
+    /**
+     * A business belongs to a specific category
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function category()
+    {
+        return $this->belongsTo('\App\Category');
+    }
 }
