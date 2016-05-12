@@ -28,20 +28,10 @@ class CreateBusinessDetailsTable extends Migration
             $table->text('about');
             $table->string('logo', 100)->nullable()->default('yunga_business_logo_placeholder.jpg');
             $table->integer('rating')->nullable();
-            $table->string('category_id')->unsigned();;
             $table->integer('user_id')->unsigned();
-            $table->boolean('active')->default(0);
+            $table->integer('category_id')->unsigned();
+            $table->boolean('active')->default(false);
             $table->timestamps();
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('user')
-                ->onDelete('cascade');
-
-            $table->foreign('category_id')
-                ->references('id')
-                ->on('user')
-                ->onDelete('cascade');
         });
     }
 
