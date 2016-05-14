@@ -74,3 +74,15 @@ Route::resource('categories', 'CategoryController', [
         'showCategories' => 'subcategories_path',
     ]
 ]);
+
+
+/*
+|--------------------------------------------------------------------------
+| Image Route Resource
+|--------------------------------------------------------------------------
+|
+| This handles routing traffic for routing of image files, like
+| linking image paths.
+|
+*/
+Route::get('/images/{file}', 'ImageController@getImage');
